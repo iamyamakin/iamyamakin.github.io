@@ -1,0 +1,55 @@
+.button
+    background #e5e5e5
+    background linear-gradient(to bottom, rgba(0, 0, 0, .1), rgba(0, 0, 0, .35))
+    border none
+    border-radius 7px
+    cursor pointer
+    display inline-block
+    overflow visible
+    padding 0 10px
+    position relative
+    user-select none
+
+    &:before
+    &:after
+        bottom 0
+        content ""
+        left 0
+        position absolute
+        right 0
+        top 0
+
+    &:before
+        background #f2f2f2
+        background linear-gradient(to bottom, #f2f2f2 30%, #e2e2e2 70%)
+        bottom 1px
+        border-radius 6px
+        left 1px
+        right 1px
+        top 1px
+
+    &::-moz-focus-inner
+        border none
+
+    &:focus
+        outline none
+        background none
+
+        &:before
+            box-shadow 0 0 5px rgba(0, 35, 214, .94)
+
+    &:hover
+        &:before
+            background #feffeb
+            background linear-gradient(to bottom, #feffeb 30%, #fdffcc 70%)
+
+    &:active
+        background linear-gradient(to bottom, rgba(0, 0, 0, .35), rgba(0, 0, 0, .1))
+
+        &:before
+            background #e2e2e2
+            background linear-gradient(to bottom, #f2f2f2 30%, #e2e2e2 70%)
+            box-shadow inset 0 2px 3px rgba(0, 0, 0, .26)
+
+
+@require "**/*.styl"

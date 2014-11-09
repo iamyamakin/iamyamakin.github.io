@@ -1,0 +1,19 @@
+.figure
+    display inline-block
+    min-width 126px /* in the future this will not be necessary. */
+    overflow hidden
+    position relative
+    vertical-align bottom
+
+    \/.icon-list__item &
+        text-align center
+
+    \/.icon-list__item &:after
+        content ""
+        display inline-block
+        height 100%
+        vertical-align middle
+        margin-left -.25em
+
+
+@require "**/*.styl"

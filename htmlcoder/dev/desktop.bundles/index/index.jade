@@ -1,0 +1,159 @@
+extends ../../desktop.blocks/common/common
+include ../../desktop.blocks/button/button
+include ../../desktop.blocks/progress-bar/progress-bar
+include ../../desktop.blocks/rating/rating
+
+
+block title
+    title Task for html-coder. Only CSS & HTML.
+
+block content
+    +b("article").article
+        +b("header").article-header
+            +e("h2").title Аналитика Сетевых Взаимодействий
+            +e.controls
+                +b.rating-box_side_right
+                    +e("span").title Оцените пост:
+                    +rating("rating_type_star _state_edit",
+                    "rating-post")
+        p.
+            Сценарий WIA перенаправляет нажатия клавиш и&nbsp;движения мыши каждого посетителя страницы.
+            Если пользователь ввел в&nbsp;форму на&nbsp;веб-сайте данные, а&nbsp;затем передумал их&nbsp;передавать,
+            то&nbsp;сценарий WIA всё равно запишет эти данные. Таким образом, будут известны сведения,
+            которые пользователь не&nbsp;хотел сообщать.
+        p.
+            Напишите небольшой текст (ну, скажем, в&nbsp;пару твиттов) на&nbsp;важную для вас тему,
+            связанную с&nbsp;профессией. Сверстайте его в&nbsp;начале задания.
+    +b("article").article
+        +b("header").article-header
+            +e("h2").title Сверстайте контрол оценки и&nbsp;показа рейтинга
+            +e.controls
+                +b.rating-box_side_right
+                    +rating("rating_type_brick _userchoice_4",
+                    "rating-skin")
+                    +e("span").nominal-value хорошо
+        p.
+            Практически все наши контролы должны быть очень гибкими к&nbsp;окружающему пространству,
+            должны уметь располагаться на&nbsp;любом фоне и&nbsp;при желании легко менять свой &laquo;скин&raquo;.
+            Учитывайте это в&nbsp;этом и&nbsp;других заданиях.
+        p.
+            Обратите внимание, что контрол должен не&nbsp;только выставлять оценку, но&nbsp;и&nbsp;показывать текущую.
+    +b("article").article
+        +b("header").article-header
+            +e("h2").title Сверстайте прогресс-бар
+            +e.controls
+                +progress-bar("20%")
+    +b("article").article
+        +b("header").article-header
+            +e("h2").title Сверстайте кнопку
+            +e.controls
+                +button("Кнопка")
+        p.
+            Пожалуйста, учитывайте, что эта кнопка должна быть кнопкой-на-все-случаи-жизни.
+            Сделайте несколько примеров кнопки в&nbsp;различном окружении и&nbsp;различном html-представлении.
+        +b("form").search
+            +e("label").label
+                +e("input").keywords(type="search",
+                name="q",
+                maxlength="240",
+                size="28", placeholder="Поиск",
+                required, autocomplete="off")
+            +button("Найти").__submit(type="submit")
+        br
+        +b.button
+            +e("span").text Дивоспан
+        | &nbsp;
+        +b.button(href="#")
+            +e("span").text Кнопка из ссылки
+    +b("article").article
+        +b("header").article-header
+            +e("h2").title Сверстайте список из&nbsp;иконок
+        +b("ul").icon-list
+            +e("li").item
+
+                +b("figure").figure_type_chrome
+                    +e("img").img(src="assets/img/chrome.png")
+                    +e("figcaption").caption_color_chrome-green Ch
+                        +e("span").caption_color_chrome-red ro
+                        +e("span").caption_color_chrome-yellow me
+            +e("li").item
+                +b("figure").figure_type_firefox
+                    +e("img").img(src="assets/img/firefox.png")
+                    +e("figcaption").caption_color_firefox Firefox
+            +e("li").item
+                +b("figure").figure_type_opera
+                    +e("img").img(src="assets/img/opera.png")
+                    +e("figcaption").caption_color_opera Opera
+            +e("li").item
+                +b("figure").figure_type_safari
+                    +e("img").img(src="assets/img/safari.png")
+                    +e("figcaption").caption_color_safari Safari
+            +e("li").item
+                +b("figure").figure_type_ie
+                    +e("img").img(src="assets/img/ie.png",
+                    title="Internet Explorer")
+                    +e("figcaption").caption_color_ie Internet<br />Explorer
+        p.
+            Список должен занимать всю ширину родителя, расстояние между последней иконкой и&nbsp;предпоследней
+            должно занимать все свободное пространство. Иконки должны быть прозрачными (png24).
+        p.
+            В&nbsp;случае если пользователь отключил картинки или они по&nbsp;какой-то причине не&nbsp;загрузились,
+            интерфейс должен отреагировать на&nbsp;это оформленным текстом.
+        +b("ul").icon-list
+            +e("li").item
+                +b("figure").figure_type_chrome
+                    +e("img").img(src="assets/img/no.png")
+                    +e("figcaption").caption_color_chrome-green Ch
+                        span.figure__caption_color_chrome-red ro
+                        span.figure__caption_color_chrome-yellow me
+            +e("li").item
+                +b("figure").figure_type_firefox
+                    +e("img").img(src="assets/img/no.png")
+                    +e("figcaption").caption_color_firefox Firefox
+            +e("li").item
+                +b("figure").figure_type_opera
+                    +e("img").img(src="assets/img/no.png")
+                    +e("figcaption").caption_color_opera Opera
+            +e("li").item
+                +b("figure").figure_type_safari
+                    +e("img").img(src="assets/img/no.png")
+                    +e("figcaption").caption_color_safari Safari
+            +e("li").item
+                +b("figure").figure_type_ie
+                    +e("img").img(src="assets/img/no.png")
+                    +e("figcaption").caption_color_ie Internet<br />Explorer
+    +b("article").article_font_ptsans
+        +b("header").article-header
+            +e("h2").title Сверстайте текст
+        +e("h2").title Тема: &laquo;Сюжетный анапест:<br />основные моменты&raquo;
+        +e.column_count_2
+            p.
+                Нельзя восстановить истинной хронологической последовательности событий,
+                потому что мелькание мыслей параллельно. Структура аллитерирует мелодический реформаторский
+                пафос, однако дальнейшее развитие приемов декодирования мы&nbsp;находим в&nbsp;работах
+                академика В.Виноградова. Аллюзия наблюдаема. Аллитерация, как&nbsp;бы это ни&nbsp;казалось
+                парадоксальным, параллельна. Мифопорождающее текстовое устройство прочно вызывает эпитет,
+                причём сам Тредиаковский свои стихи мыслил как &laquo;стихотворное
+                дополнение&raquo; к&nbsp;книгеТальмана.
+            p.
+                Речевой акт традиционно осознаёт музыкальный дольник, но&nbsp;не&nbsp;рифмами. Различное расположение
+                просветляет мелодический образ, таким образом постепенно смыкается с&nbsp;сюжетом. Силлабо-тоника,
+                в&nbsp;первом приближении, просветляет мелодический ямб, таким образом в&nbsp;некоторых случаях
+                образуются рефрены, кольцевые композиции, анафоры.
+            p.
+                Представленный лексико-семантический анализ является психолингвистическим в&nbsp;своей основе,
+                но&nbsp;мифопорождающее текстовое устройство аллитерирует мифологический генезис свободного стиха,
+                об&nbsp;этом свидетельствуют краткость и&nbsp;завершенность формы, бессюжетность,
+                своеобразие тематического развертывания.
+            p.
+                Драма, по&nbsp;определению отражает брахикаталектический стих, хотя в&nbsp;существование или актуальность
+                этого он&nbsp;не&nbsp;верит, а&nbsp;моделирует собственную реальность. Лексика осознаёт
+                литературный палимпсест, об&nbsp;этом свидетельствуют краткость и&nbsp;завершенность формы,
+                бессюжетность, своеобразие тематического развертывания.
+            +b("ul").list
+                +e("li").item Курит&nbsp;ли трупка мой
+                +e("li").item
+                    a(href="http://example.com") из&nbsp;трупка тфой пихтишь
+                +e("li").item
+                    a(href="http://example.com").pseudo-link Или мой кафе пил
+                +e("li").item тфой в&nbsp;щашешка сидишь

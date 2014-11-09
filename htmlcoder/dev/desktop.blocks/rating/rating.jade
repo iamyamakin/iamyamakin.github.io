@@ -1,0 +1,21 @@
+mixin rating(klass, name, nominal)
+    +b("b")(class="#{klass}")&attributes(attributes)
+
+        unless nominal = ["ужасно", "плохо", "обычно", "хорошо", "отлично"]
+        - var nominalLength = nominal.length
+        - var unique = Date.now().toString(36)
+
+        each value, index in nominal.reverse()
+            - var i = nominalLength - index
+
+            +e("input").input(
+                id="rating__input_value_#{i}-#{unique}",
+                type="radio",
+                name="#{name}"
+            )
+            +e("label").item(
+                data-value="#{i}",
+                data-title="#{value}",
+                for="rating__input_value_#{i}-#{unique}"
+            )
+                +e("span").icon

@@ -1,0 +1,33 @@
+$link = #0070ed
+$link-visited = #8c64b4
+$link-hover = #f00
+$link-pseudo = #353434
+
+
+:link
+.link
+    background: linear-gradient($link 1px, transparent 1px) 0 100% repeat-x
+    background-size 1px 1px
+    color $link
+    text-decoration none
+
+
+:visited
+    color $link-visited
+
+
+:link
+.link
+    &:focus
+    &:hover
+    &:active
+        background none
+        color $link-hover
+
+
+.pseudo-link
+    background none
+    border-bottom 1px dotted
+    color $link-pseudo
+    cursor pointer
+    text-decoration none

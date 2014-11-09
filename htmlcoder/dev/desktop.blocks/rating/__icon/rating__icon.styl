@@ -1,0 +1,60 @@
+.rating__icon
+    background-color transparent
+    border 0
+    display inline-block
+    overflow hidden
+
+    \/.rating__item:first-of-type &
+        margin-right 0
+
+    /* rating type star */
+    \/.rating_type_star &
+        background url("@@star.png") -1px -1px no-repeat
+        height 16px
+        margin 0 4px 0 0
+        width 16px
+
+    \/.rating_state_edit.rating_type_star .rating__item:hover &
+    \/.rating_state_edit.rating_type_star:hover .rating__item:hover ~ .rating__item &
+    \/.rating_state_edit.rating_type_star .rating__input:checked ~ .rating__item &
+        background-position -18px -1px
+
+    \/.rating_state_edit.rating_type_star:hover .rating__item:not(:hover) &
+        background-position -1px -1px
+
+    /* rating type brick */
+    \/.rating_type_brick &
+        background #d9d9d9
+        border-color #909090 #c0c0c0 transparent
+        border-style solid
+        border-width 1px
+        height 6px
+        margin 5px 4px 0 0
+        width 20px
+
+    \/.rating_state_edit.rating_type_brick .rating__item:hover &
+    \/.rating_state_edit.rating_type_brick:hover .rating__item:hover ~ .rating__item &
+    \/.rating_state_edit.rating_type_brick .rating__input:checked ~ .rating__item &
+        background #5fb2ff
+        border-color transparent
+
+    \/.rating_state_edit.rating_type_brick:hover .rating__item:not(:hover) &
+        background #d9d9d9
+        border-color #909090 #c0c0c0 transparent
+
+    /* rating userchoice type star */
+    \/$star-bg-position
+        background-position -18px -1px
+
+    for num in (1..5)
+        \/.rating_type_star.rating_userchoice_{num} .rating__item:nth-last-of-type(-n+{num}) &
+            @extends $star-bg-position
+
+    /* rating userchoice type brick */
+    \/$brick-bg-position
+        background #5fb2ff
+        border-color transparent
+
+    for num in (1..5)
+        \/.rating_type_brick.rating_userchoice_{num} .rating__item:nth-last-of-type(-n+{num}) &
+            @extends $brick-bg-position

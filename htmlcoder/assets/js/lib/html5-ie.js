@@ -1,0 +1,1 @@
+!function(){"use strict";for(var a=["article","aside","audio","canvas","figcaption","figure","footer","header","main","mark","nav","section","video"],b=a.length,c=document;b--;)c.createElement(a[b])}();

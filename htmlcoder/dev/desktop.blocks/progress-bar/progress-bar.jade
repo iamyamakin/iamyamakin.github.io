@@ -1,0 +1,5 @@
+mixin progress-bar(value)
+    +b("span").progress-bar&attributes(attributes)
+        +e("span").label #{value}
+        +e("span").value
+
