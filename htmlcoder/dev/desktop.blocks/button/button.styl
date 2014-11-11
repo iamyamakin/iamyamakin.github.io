@@ -1,6 +1,10 @@
+$button-background-color = #e5e5e5
+$button-background-linear-gradient = linear-gradient(to bottom, rgba(0, 0, 0, .1), rgba(0, 0, 0, .35))
+
+
 .button
-    background #e5e5e5
-    background linear-gradient(to bottom, rgba(0, 0, 0, .1), rgba(0, 0, 0, .35))
+    background $button-background-color
+    background $button-background-linear-gradient
     border none
     border-radius 7px
     cursor pointer
@@ -39,6 +43,9 @@
             box-shadow 0 0 5px rgba(0, 35, 214, .94)
 
     &:hover
+        background $button-background-color
+        background $button-background-linear-gradient
+
         &:before
             background #feffeb
             background linear-gradient(to bottom, #feffeb 30%, #fdffcc 70%)
